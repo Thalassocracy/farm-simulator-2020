@@ -1,0 +1,6 @@
+{
+    "ammo_capacity": 1,
+    "ammo_per_shot": 1,
+    "start_fully_charged": true,
+    "base_spec": "/pa/timer/timer_10.json"
+  }

@@ -1,0 +1,85 @@
+{   
+    "base_spec": "/pa/units/land/land_mine/land_mine.json",
+    "display_name": "!LOC:Plant",
+    "description": "!LOC:Plant - Grows into harvestable form after 10 seconds. Gives 1000 metal per plant.",
+    "spawn_unit_on_death": "/pa/units/plants/plant_grown.json",
+    "area_build_separation": 1.0,
+    "area_build_type": "Sphere",
+    "build_metal_cost": 20,
+    "events": {
+      "died": {
+        "effect_spec": "/pa/units/land/bot_bomb/bot_bomb_ammo_explosion.pfx",
+        "audio_cue": "/SE/Death/barrier"
+      },
+      "build_complete": {
+        "audio_cue": "/SE/Build_Complete/barrier"
+      }
+    },
+    "max_health": 15,
+    "mesh_bounds": [
+      4.0,
+      4.0,
+      1.0
+    ],
+    "model": [
+      {
+        "layer": "WL_LandHorizontal",
+        "filename": "/pa/units/land/land_mine/land_mine.papa"
+      },
+      {
+        "layer": "WL_WaterSurface",
+        "filename": "/pa/units/sea/sea_mine/sea_mine.papa"
+      }
+    ],
+    "physics": {
+      "push_sideways": false,
+      "collision_layers": "WL_AnyHorizontalGroundOrWaterSurface",
+      "collide_with_types": [
+        "Projectile"
+      ],
+      "allow_underground": false,
+      "radius": 1,
+      "shape": "Box",
+      "type": "Structure",
+      "allow_pushing": false
+    },
+    "recon": {
+      "observable": {
+        "layer": "mine"
+      },
+      "observer": {
+        "items": [
+          {
+            "layer": "surface_and_air",
+            "shape": "sphere",
+            "radius": 2,
+            "channel": "radar"
+          },
+          {
+            "layer": "underwater",
+            "shape": "sphere",
+            "radius": 2,
+            "channel": "radar"
+          }
+        ]
+      }
+    },
+    "selection_icon": {
+      "diameter": 7.0
+    },
+    "spawn_layers": "WL_AnyHorizontalGroundOrWaterSurface",
+    "strategic_icon_priority": 3,
+    "tools": [
+      {
+        "spec_id": "/pa/timer/timer_10.json",
+        "aim_bone": "bone_root",
+        "muzzle_bone": "bone_root"
+      }
+    ],
+    "unit_types": [
+      "UNITTYPE_CmdBuild",
+      "UNITTTYPE_MetalProduction",
+      "UNITTYPE_FabBuild"
+    ],
+    "wreckage_health_frac": 0.0
+  }

@@ -1,0 +1,19 @@
+{
+    "base_spec": "/pa/terrain/generic/base_metal.json",
+    "display_name": "!LOC:Wild Berry Bush",
+    "show_strategic_icon": false,
+    "model": {
+        "filename": "/pa/paplants/fbx/farm_bush.papa"
+    },
+    "feature_types": [
+        "Reclaimable",
+        "metal_spot"
+    ],
+    "max_health": 300,
+    "metal_value": 4500000,
+
+    "reclaimable": true,
+    "damageable": true,
+    "placement_size":[0,0,0],
+    "passive_health_regen": 9000
+}

@@ -1,0 +1,68 @@
+{
+    "display_name": "!LOC:Harvester",
+    "description": "!LOC:Harvester - Only reclaims wreckage; no energy usage",
+    "base_spec": "/pa/units/land/fabrication_bot/fabrication_bot.json",
+    "build_metal_cost": 200,
+    "buildable_types": "- Custom1 - Custom2 - Custom3 - Custom4",
+    "command_caps": [
+      "ORDER_Move",
+      "ORDER_Reclaim"
+    ],
+    "max_health": 50,
+    "model": {
+      "animtree": "/pa/anim/anim_trees/fabrication_bipedal_mech_anim_tree.json",
+      "animations": {
+        "idle": "/pa/units/land/fabrication_bot/fabrication_bot_anim_idle.papa",
+        "aim_down": "/pa/units/land/fabrication_bot/fabrication_bot_anim_aimDown.papa",
+        "death01": "/pa/units/land/fabrication_bot/fabrication_bot_anim_death01.papa",
+        "walk": "/pa/units/land/fabrication_bot/fabrication_bot_anim_run.papa",
+        "aim_up": "/pa/units/land/fabrication_bot/fabrication_bot_anim_aimUp.papa"
+      },
+      "filename": "/pa/units/land/fabrication_bot/fabrication_bot.papa",
+      "walk_speed": 12
+    },
+    "navigation": {
+      "move_speed": 14,
+      "group_preference": "back",
+      "type": "land-small",
+      "acceleration": 160,
+      "brake": -1,
+      "turn_speed": 360
+    },
+    "recon": {
+      "observer": {
+        "items": [
+          {
+            "layer": "surface_and_air",
+            "shape": "capsule",
+            "radius": 100,
+            "channel": "sight"
+          },
+          {
+            "layer": "underwater",
+            "shape": "capsule",
+            "radius": 100,
+            "channel": "sight"
+          }
+        ]
+      }
+    },
+    "selection_icon": {
+      "diameter": 9
+    },
+    "tools": [
+      {
+        "aim_bone": "bone_root",
+        "spec_id": "/pa/units/harvesters/harvester_tool.json"
+      }
+    ],
+    "transportable": {
+      "size": 1
+    },
+    "unit_types": [
+      "UNITTYPE_Bot",
+      "UNITTYPE_Basic",
+      "UNITTYPE_FactoryBuild",
+      "UNITTYPE_Structure"
+    ]
+  }
